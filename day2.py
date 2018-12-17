@@ -30,8 +30,24 @@ threes = 0
 result = 0
 with open("day2.txt") as f:
     for line in f:
+        seenTwo = False
+        seenThree = False
         charMap = {}
-        strings = line.split('')
-        print(strings)
+        strings = list(line)
+        for letter in strings:
+            if letter in charMap:
+                charMap[letter] += 1
+            else:
+                charMap[letter] = 1
 
-print(result)
+        for key, value in charMap.items():
+            if(value == 2):
+                if(seenTwo == False):
+                    seenTwo = True
+                    twos += 1
+            elif(value == 3):
+                if(seenThree == False):
+                    seenThree = True
+                    threes += 1
+
+print(twos * threes)
