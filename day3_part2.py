@@ -19,11 +19,12 @@ with open("day3.txt") as f:
         claims[name] = 0
         for x in range(int(coords[0]), int(coords[0]) + int(size[0])):
             for y in range(int(coords[1].replace(':', '')), int(coords[1].replace(':', '')) + int(size[1])):
-                print(name, arr[x][y], x, y)
                 if name not in arr[x][y]:
                     arr[x][y] = arr[x][y] + [name]
                     if len(arr[x][y]) >= 2:
                         for claim in arr[x][y]:
                             claims[claim] = 1
                    
-print(claims)
+for key, value in claims.items():
+    if value == 0:
+        print(key)
