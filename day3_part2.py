@@ -7,7 +7,7 @@
 # What is the ID of the only claim that doesn't overlap?
 
 
-arr = [[[]]*10 for _ in range(10)]
+arr = [[[]]*1000 for _ in range(1000)]
 claims = {}
 
 with open("day3.txt") as f:
